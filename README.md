@@ -2,6 +2,12 @@
 ### Introduction
 The FOInterfaceV1 contract provides an interface for interacting with a Fact Oracle (FO) system. This guide outlines how to use the interface to retrieve data feeds and manage subscriptions.
 
+
+### Oracle Address 
+## CDI Daily 
+### Testnet
+**Chiado** 0xf17f824cda3A5eED56bD0EF454e5E1b078Eb85CA
+
 ### Getting Started
 Prerequisites
   - .sol interface file or a clone of this repo https://github.com/FactFinance/FactOracleInterfaces.git
