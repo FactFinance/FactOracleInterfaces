@@ -4,9 +4,10 @@ The FOInterfaceV1 contract provides an interface for interacting with a Fact Ora
 
 
 ### Oracle Address 
-## CDI Daily 
-### Testnet
-**Chiado** 0xf17f824cda3A5eED56bD0EF454e5E1b078Eb85CA
+
+**Testnet - CDI Daily**
+   - Chiado:  0xf17f824cda3A5eED56bD0EF454e5E1b078Eb85CA
+    
 
 ### Getting Started
 Prerequisites
