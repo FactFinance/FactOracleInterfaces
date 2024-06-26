@@ -4,8 +4,8 @@ The FOInterfaceV1 contract provides an interface for interacting with a Fact Ora
 
 ### Getting Started
 Prerequisites
-  - Basic understanding of Solidity smart contracts.
-  - Access to a development environment with Solidity compiler and a blockchain network (local or testnet).
+  - .sol interface file or a clone of this repo https://github.com/FactFinance/FactOracleInterfaces.git
+  - Access to a development environment with Solidity compiler and a blockchain network like Remix at https://remix.ethereum.org/
 
 ### Installation
 
