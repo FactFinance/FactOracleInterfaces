@@ -1,2 +1,106 @@
-# FactOracleInterfaces
-Fact Finance Oracle Interfaces
+## FOInterfaceV1 Usage Guide
+### Introduction
+The FOInterfaceV1 contract provides an interface for interacting with a Fact Oracle (FO) system. This guide outlines how to use the interface to retrieve data feeds and manage subscriptions.
+
+### Getting Started
+Prerequisites
+  - Basic understanding of Solidity smart contracts.
+  - Access to a development environment with Solidity compiler and a blockchain network (local or testnet).
+
+### Installation
+
+Import the Interface: Ensure you have imported FOInterfaceV1.sol into your Solidity project.
+
+```solidity
+import "./FOInterfaceV1.sol";
+```
+
+Contract Initialization: Obtain the address of a contract that implements FOInterfaceV1 at https://fact.finance.
+
+### Usage
+
+Below is an example contract ConsumerFOracle demonstrating how to interact with FOInterfaceV1:
+
+```solidity
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import "./FOInterfaceV1.sol";
+
+contract ConsumerFOracle {
+    FOInterfaceV1 fOracle;
+
+    constructor(address _oracle) {
+        fOracle = FOInterfaceV1(_oracle);
+    }
+
+    function getLast() public {
+        (uint256 feedTimestamp, DataFeed memory dataFeed) = fOracle.getLast();
+        // Process data feed values
+    }
+
+    function getDate(uint256 _timestamp) public {
+        DataFeed memory dataFeed = fOracle.getDate(_timestamp);
+        // Process data feed values for a specific timestamp
+    }
+
+    function getInterval(uint256 _start, uint256 _end) public {
+        int256 accrued = fOracle.getInterval(_start, _end);
+        // Process accumulated value for a time range
+    }
+
+    // Additional contract functions as needed
+}
+```
+
+### Interacting with FOInterfaceV1
+
+Initialization
+Constructor: Initialize ConsumerFOracle with the address of your deployed FOInterfaceV1 contract.
+
+```solidity
+
+constructor(address _oracle) {
+    fOracle = FOInterfaceV1(_oracle);
+}
+```
+
+Methods
+
+1. getLast(): Retrieve the latest data feed stored in the FO system.
+
+```solidity
+
+function getLast() public {
+    (uint256 feedTimestamp, DataFeed memory dataFeed) = fOracle.getLast();
+    // Process data feed values here
+}
+```
+
+2. getDate(uint256 _timestamp): Get data feed values for a specific timestamp.
+
+```solidity
+
+function getDate(uint256 _timestamp) public {
+    DataFeed memory dataFeed = fOracle.getDate(_timestamp);
+    // Process data feed values for the specified timestamp
+}
+```
+
+3. getInterval(uint256 _start, uint256 _end): Calculate accumulated value between two timestamps.
+
+```solidity
+
+function getInterval(uint256 _start, uint256 _end) public {
+    int256 accrued = fOracle.getInterval(_start, _end);
+    // Process accumulated value for the specified time range
+}
+```
+
+### Testing
+ - Unit Tests: Ensure to write tests that cover various scenarios using FOInterfaceV1 functions.
+ - Integration Tests: Verify interactions between your contract and FOInterfaceV1.
+
+### License
+This project is licensed under the MIT License. See the LICENSE file for details.
