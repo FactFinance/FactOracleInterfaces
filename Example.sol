@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 import "./FOInterfaceV1.sol";
-import "./FOManagerIterfaceV1.sol";
+import "./FOManagerInterfaceV1.sol";
 
 /// @title Consumer Fact Oracle Contract
 /// @notice This contract allows interaction with a Fact Oracle, providing methods to retrieve and manage oracle data
@@ -11,7 +11,6 @@ import "./FOManagerIterfaceV1.sol";
 contract ConsumerFOracle {
 
     /*  Oracle Setup */
-
     
     FOInterfaceV1 public fOracle;   /// @notice Instance of the FOInterfaceV1 to interact with the oracle
     
@@ -28,8 +27,7 @@ contract ConsumerFOracle {
 
     /// @notice Retrieves the latest data feed from the oracle and updates contract state variables
     function getLast() public {
-        cdiDataFeed = fOracle.getLast();       
-        decimal = fOracle.decimal();
+        cdiDataFeed = fOracle.getLast();               
     }
 
 
@@ -52,12 +50,11 @@ contract ConsumerFOracle {
     /*  basic contract example  */
     address public owner;    
     DataFeed public cdiDataFeed;
-    int256 public accrued;    
-    uint8 public decimal;
+    int256 public accrued;        
 
     /// @notice Resets the contract state variables
     function reset() public {
-        cdiDataFeed = DataFeed(0,0,0);
+        cdiDataFeed = DataFeed(0,0,0,0);
     }
 
     /// @dev Modifier to check if the caller is the contract owner
