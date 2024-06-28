@@ -31,7 +31,8 @@ interface FOInterfaceV1 {
 /// @dev Used to store oracle data with an associated confidence score
 struct DataFeed {    
     int256 value;        /// @dev Integer value of the data feed
-    uint256 updatedat;   /// @dev timestamp of backend data update
+    uint256 updatedat;   /// @dev Timestamp of backend data update
+    uint8 decimal;       /// @dev Number of decimal places for the data value
     uint8 confidence;    /// @dev Confidence level of the data feed
                          /// @dev 1: outlier, 2: acceptable, 3: reliable
 }
