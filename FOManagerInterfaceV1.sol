@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: BUSL-1.1
+pragma solidity ^0.8.24;
 
 /// @title Fact Oracle Manager Interface V1
 /// @notice This interface defines the external functions for managing subscriptions and balances
