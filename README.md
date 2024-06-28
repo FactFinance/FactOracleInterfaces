@@ -1,4 +1,4 @@
-## Fact Oracle Interface V1 Usage Guide
+## Fact Oracle Interface V1.0001 Usage Guide
 ### Introduction
 The FOInterfaceV1 contract provides an interface for interacting with a Fact Oracle (FO) system. This guide outlines how to use the interface to retrieve data feeds and manage subscriptions.
 
@@ -6,7 +6,7 @@ The FOInterfaceV1 contract provides an interface for interacting with a Fact Ora
 ### Oracle Address 
 
 **Testnet - CDI Daily**
-   - Chiado:  0xf17f824cda3A5eED56bD0EF454e5E1b078Eb85CA
+   - Chiado:  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
     
 
 ### Getting Started
@@ -26,6 +26,21 @@ Contract Initialization: Obtain the address of a contract that implements FOInte
 
 ### Usage
 
+**DataFeed Struct** 
+
+```solidity
+/// @title Data Feed Struct
+/// @notice This struct represents the data feed with a value and confidence level
+/// @dev Used to store oracle data with an associated confidence score
+struct DataFeed {    
+    int256 value;        /// @dev Integer value of the data feed
+    uint256 updatedat;   /// @dev Timestamp of backend data update
+    uint8 decimal;       /// @dev Number of decimal places for the data value
+    uint8 confidence;    /// @dev Confidence level of the data feed
+                         /// @dev 1: outlier, 2: acceptable, 3: reliable
+}
+```
+
 Below is an example contract ConsumerFOracle demonstrating how to interact with FOInterfaceV1:
 
 ```solidity
@@ -43,17 +58,17 @@ contract ConsumerFOracle {
     }
 
     function getLast() public {
-        (uint256 feedTimestamp, DataFeed memory dataFeed) = fOracle.getLast();
+        cdiDataFeed = fOracle.getLast(); 
         // Process data feed values
     }
 
     function getDate(uint256 _timestamp) public {
-        DataFeed memory dataFeed = fOracle.getDate(_timestamp);
+       cdiDataFeed = fOracle.getDate(_timestamp);   
         // Process data feed values for a specific timestamp
     }
 
     function getInterval(uint256 _start, uint256 _end) public {
-        int256 accrued = fOracle.getInterval(_start, _end);
+        accrued = fOracle.getInterval(_start, _end);
         // Process accumulated value for a time range
     }
 
@@ -80,7 +95,7 @@ Methods
 ```solidity
 
 function getLast() public {
-    (uint256 feedTimestamp, DataFeed memory dataFeed) = fOracle.getLast();
+    cdiDataFeed = fOracle.getLast(); 
     // Process data feed values here
 }
 ```
@@ -90,7 +105,7 @@ function getLast() public {
 ```solidity
 
 function getDate(uint256 _timestamp) public {
-    DataFeed memory dataFeed = fOracle.getDate(_timestamp);
+    cdiDataFeed = fOracle.getDate(_timestamp);
     // Process data feed values for the specified timestamp
 }
 ```
@@ -107,8 +122,21 @@ function getInterval(uint256 _start, uint256 _end) public {
 
 # Fact Oracle Manager Interface V1
 
+**Testnet - Economics License Manager**
+   - Chiado:  0xED424A23d3f97c834F5895141Fd8E9EE64b15ea4
+    
 ## Introduction
 The Fact Oracle Manager Interface V1 defines external functions for managing subscriptions and balances within the Fact Finance ecosystem. This interface allows contracts to grant and revoke access to data from the Fact Oracle and manage customer balances effectively.
+
+### Manager Address getLicenseInfo()
+
+Each DataNode can provide the address of its License Manager.
+
+```solidity
+getLicenseInfo()
+   "0": "string: ECONOMIC_INDEX_BR",
+   "1": "address: 0xED424A23d3f97c834F5895141Fd8E9EE64b15ea4"
+```
 
 ### Interface Description
 The FOManagerInterfaceV1 interface is implemented by contracts that manage subscriptions and balances for accessing data from the Fact Oracle.
@@ -162,42 +190,9 @@ This function revokes an existing subscription for a specified address, terminat
 function checkBalance(address _address) external view returns (uint32);
 ```
 
+
 This function retrieves the balance of a specific customer, which indicates their remaining credits or entitlements within the Fact Oracle subscription system.
 
-## Usage
-
-### Integration Example
-
-Implement the FOManagerInterfaceV1 interface in your contract to manage subscriptions and balances for accessing data from the Fact Oracle.
-
-```solidity
-
-import "./FOManagerInterfaceV1.sol";
-
-contract FactOracleManager {
-    FOManagerInterfaceV1 foManager;
-
-    constructor(address _foManager) {
-        foManager = FOManagerInterfaceV1(_foManager);
-    }
-
-    function grantAccess(address _subscriber) public {
-        foManager.grantSubscription(_subscriber);
-    }
-
-    function revokeAccess(address _subscriber) public {
-        foManager.revokeSubscription(_subscriber);
-    }
-
-    function checkAccess(address _subscriber) public view returns (bool) {
-        return foManager.checkSubscriber(_subscriber);
-    }
-
-    function checkSubscriberBalance(address _subscriber) public view returns (uint32) {
-        return foManager.checkBalance(_subscriber);
-    }
-}
-```
 
 ### License
 This project is licensed under the MIT License. See the LICENSE file for details.
