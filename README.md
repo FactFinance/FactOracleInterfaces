@@ -41,41 +41,6 @@ struct DataFeed {
 }
 ```
 
-Below is an example contract ConsumerFOracle demonstrating how to interact with FOInterfaceV1:
-
-```solidity
-
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
-
-import "./FOInterfaceV1.sol";
-
-contract ConsumerFOracle {
-    FOInterfaceV1 fOracle;
-
-    constructor(address _oracle) {
-        fOracle = FOInterfaceV1(_oracle);
-    }
-
-    function getLast() public {
-        cdiDataFeed = fOracle.getLast(); 
-        // Process data feed values
-    }
-
-    function getDate(uint256 _timestamp) public {
-       cdiDataFeed = fOracle.getDate(_timestamp);   
-        // Process data feed values for a specific timestamp
-    }
-
-    function getInterval(uint256 _start, uint256 _end) public {
-        accrued = fOracle.getInterval(_start, _end);
-        // Process accumulated value for a time range
-    }
-
-    // Additional contract functions as needed
-}
-```
-
 ### Interacting with FOInterfaceV1
 
 Initialization
@@ -120,14 +85,6 @@ function getInterval(uint256 _start, uint256 _end) public {
 }
 ```
 
-# Fact Oracle Manager Interface V1
-
-**Testnet - Economics License Manager**
-   - Chiado:  0xED424A23d3f97c834F5895141Fd8E9EE64b15ea4
-    
-## Introduction
-The Fact Oracle Manager Interface V1 defines external functions for managing subscriptions and balances within the Fact Finance ecosystem. This interface allows contracts to grant and revoke access to data from the Fact Oracle and manage customer balances effectively.
-
 ### Manager Address getLicenseInfo()
 
 Each DataNode can provide the address of its License Manager.
@@ -137,6 +94,17 @@ getLicenseInfo()
    "0": "string: ECONOMIC_INDEX_BR",
    "1": "address: 0xED424A23d3f97c834F5895141Fd8E9EE64b15ea4"
 ```
+
+
+# Fact Oracle Manager Interface V1
+
+**Testnet - Economics License Manager**
+   - Chiado:  0xED424A23d3f97c834F5895141Fd8E9EE64b15ea4
+    
+## Introduction
+The Fact Oracle Manager Interface V1 defines external functions for managing subscriptions and balances within the Fact Finance ecosystem. This interface allows contracts to grant and revoke access to data from the Fact Oracle and manage customer balances effectively.
+
+
 
 ### Interface Description
 The FOManagerInterfaceV1 interface is implemented by contracts that manage subscriptions and balances for accessing data from the Fact Oracle.
