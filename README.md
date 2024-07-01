@@ -8,10 +8,11 @@ The FOInterfaceV1 contract provides an interface for interacting with a Fact Ora
 **GNOSIS**
    - **CDI Daily**  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
    - **SELIC Daily** 0x94C3897e55D30644477c0b184258F440E3632835
-   - **SELIC DAILY GROWTH FACTOR** 0xF97D14e9e16e7A3596711f99d5e7668312248B86  - only getLast() and getDate() - Decimal 8
+   - **SELIC Daily Growth Factor** 0xF97D14e9e16e7A3596711f99d5e7668312248B86  - only getLast() and getDate() - Decimal 8
 
-**Testnet** - CDI Daily**
-   - Chiado:  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
+**Testnet** - CHIADO
+   - CDI Daily:  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
+   - CDI Daily Growth Factor 0x125Bc0b55401BCed6edcE567C4DFbd52187c46D9  - only getLast() and getDate() - Decimal 8   
     
 
 ### Getting Started
