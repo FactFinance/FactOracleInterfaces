@@ -12,9 +12,12 @@ The FOInterfaceV1 contract provides an interface for interacting with a Fact Ora
    - **SELIC Daily Growth Factor** 0xF97D14e9e16e7A3596711f99d5e7668312248B86  - only getLast() and getDate() - Decimal 8
    - **Dólar PTAX** - 0xC1C19B8F2D8c2842c2555E633DdF1eB6CCeeC6c2
 
-**Testnet** - CHIADO
-   - CDI Daily:  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
-   - CDI Daily Growth Factor 0x125Bc0b55401BCed6edcE567C4DFbd52187c46D9  - only getLast() and getDate() - Decimal 8   
+**Testnet** - CHIADO - OPEN Oracle - No subscription required
+   - CDI Daily:  0xf4574F65c6Ef0275774fF059e38a173801E040F8
+   - CDI Monthly 0xB438E53C372DBf4334920C76fdBDF3ea9BB34384   
+   - Selic Daily 0xC68A8FAf034A563c1f20Ce87462F5f863a29985f
+   - Selic Growth Factor 0xe834f7225922DE21fe658a897F8C9f2E9EeD3eCC- only getLast() and getDate() - Decimal 8
+   - Dólar Ptax 0x6f97DCa6f8064EC8c3A3d3d13257663B953d9C8c 
     
 
 ### Getting Started
@@ -107,7 +110,8 @@ getLicenseInfo()
 # Fact Oracle Manager Interface V1
 
 **Testnet - Economics License Manager**
-   - Chiado:  0xED424A23d3f97c834F5895141Fd8E9EE64b15ea4
+   - Gnosis: 0x8Bc98Ead868add16BFf0eA4719972f7F737CBEf0
+   - Chiado: 0x185Ab8510930fAf5CC8b1413F997592deEA2FA2D   // for kick develpment, tesnet are open. You don´t need to subcribe to access get access.
     
 ## Introduction
 The Fact Oracle Manager Interface V1 defines external functions for managing subscriptions and balances within the Fact Finance ecosystem. This interface allows contracts to grant and revoke access to data from the Fact Oracle and manage customer balances effectively.
