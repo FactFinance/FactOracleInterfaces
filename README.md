@@ -3,9 +3,13 @@
 The FOInterfaceV1 contract provides an interface for interacting with a Fact Oracle (FO) system. This guide outlines how to use the interface to retrieve data feeds and manage subscriptions.
 
 
-### Oracle Address 
+### Oracle Address - MAINET
 
-**Testnet - CDI Daily**
+**GNOSIS**
+   - **CDI Daily**  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
+   - **SELIC Daily** 0x94C3897e55D30644477c0b184258F440E3632835
+
+**Testnet** - CDI Daily**
    - Chiado:  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
     
 
