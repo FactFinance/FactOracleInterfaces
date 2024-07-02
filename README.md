@@ -10,15 +10,15 @@ The FOInterfaceV1 contract provides an interface for interacting with a Fact Ora
    - **CDI Monthly** 0x72263F39AACf8264C920d5e05376B4eaE8376260   - 
    - **CID Daily Growth Factor** 0x5935Bc8bbf4B8914990371ea9D3e132f276efd9d  - only getLast() and getDate() - Decimal 8 
    - **SELIC Daily** 0x94C3897e55D30644477c0b184258F440E3632835
-   - - **SELIC Daily Growth Factor** 0xF97D14e9e16e7A3596711f99d5e7668312248B86  - only getLast() and getDate() - Decimal 8 
-   - **Dólar PTAX** - 0x8A05C2ACEc2858a06f02e066d549D5DA01CF7395
+   - **SELIC Daily Growth Factor** 0xF97D14e9e16e7A3596711f99d5e7668312248B86  - only getLast() and getDate() - Decimal 8 
+   - **Dólar PTAX** - 0x8A05C2ACEc2858a06f02e066d549D5DA01CF7395 - getInterval() returns the average
 
 **Testnet** - CHIADO - OPEN Oracle - No subscription required
    - CDI Daily:  0xf4574F65c6Ef0275774fF059e38a173801E040F8
    - CDI Monthly 0xB438E53C372DBf4334920C76fdBDF3ea9BB34384
    - CDI Growth Factor 0xe834f7225922DE21fe658a897F8C9f2E9EeD3eCC- only getLast() and getDate() - Decimal 8
    - Selic Daily 0xC68A8FAf034A563c1f20Ce87462F5f863a29985f   
-   - Dólar Ptax 0xA727AF5aA6e2E3C6F883a0b5A51d03bcc6e8BDD0 
+   - Dólar Ptax 0xA727AF5aA6e2E3C6F883a0b5A51d03bcc6e8BDD0 - getInterval() returns the average
     
 
 ### Getting Started
