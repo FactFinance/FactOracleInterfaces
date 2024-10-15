@@ -15,7 +15,7 @@ The FOInterfaceV1 contract provides an interface for interacting with a Fact Ora
 
 **XDC**
  - **CDI Daily**  0x00675ABf08e4A9Ed5F6d4BB42935af3236226Eb2
- - ** Testnet** 0x7c7410fead839614f30485c65a7247cf47299794 
+ - **Testnet** 0x7c7410fead839614f30485c65a7247cf47299794 
 
 **Testnet** - CHIADO - OPEN Oracle - No subscription required
    - CDI Daily:  0xf4574F65c6Ef0275774fF059e38a173801E040F8
