@@ -13,7 +13,7 @@ The FOInterfaceV1 contract provides an interface for interacting with a Fact Ora
    - **SELIC Daily Growth Factor** 0xF97D14e9e16e7A3596711f99d5e7668312248B86  - only getLast() and getDate() - Decimal 8 
    - **Dólar PTAX** - 0xd26190e365a052228441e7E3236BFb36128CA9E8 -  only getLast()
 
-** XDC **
+**XDC**
  - **CDI Daily**  0x00675ABf08e4A9Ed5F6d4BB42935af3236226Eb2
  - ** Testnet** 0x7c7410fead839614f30485c65a7247cf47299794 
 
