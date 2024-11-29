@@ -2,29 +2,7 @@
 ### Introduction
 The FOInterfaceV1 contract provides an interface for interacting with a Fact Oracle (FO) system. This guide outlines how to use the interface to retrieve data feeds and manage subscriptions.
 
-
-### Oracle Address - MAINET
-
-**GNOSIS**
-   - **CDI Daily**  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
-   - **CDI Monthly** 0x5DE7C939998f9eD3A66a7712a7b298816400E71D   - 
-   - **CID Daily Growth Factor** 0x5935Bc8bbf4B8914990371ea9D3e132f276efd9d  - only getLast() and getDate() - Decimal 8 
-   - **SELIC Daily** 0x94C3897e55D30644477c0b184258F440E3632835
-   - **SELIC Daily Growth Factor** 0xF97D14e9e16e7A3596711f99d5e7668312248B86  - only getLast() and getDate() - Decimal 8 
-   - **Dólar PTAX** - 0xd26190e365a052228441e7E3236BFb36128CA9E8 -  only getLast()
-
-**XDC**
- - **CDI Daily**  0x00675ABf08e4A9Ed5F6d4BB42935af3236226Eb2
- - **Testnet** 0x7c7410fead839614f30485c65a7247cf47299794 
-
-**Testnet** - CHIADO - OPEN Oracle - No subscription required
-   - CDI Daily:  0xf4574F65c6Ef0275774fF059e38a173801E040F8
-   - CDI Monthly 0x14FAdeDAC6bfcDF9aFe907463e34610b65eE40b0
-   - CDI Growth Factor 0xe834f7225922DE21fe658a897F8C9f2E9EeD3eCC- only getLast() and getDate() - Decimal 8
-   - Selic Daily 0xC68A8FAf034A563c1f20Ce87462F5f863a29985f   
-   - Dólar Ptax 0x195ABa350c0F57b6e653fd9C9598Add793628BB9 -  only getLast()
-    
-
+Check the [Oracle Address](#oracle-address)
 
 ### Getting Started
 Prerequisites
@@ -178,6 +156,31 @@ function checkBalance(address _address) external view returns (uint32);
 
 
 This function retrieves the balance of a specific customer, which indicates their remaining credits or entitlements within the Fact Oracle subscription system.
+
+## Oracle Address
+
+### MAINET
+
+**GNOSIS**
+   - **CDI Daily**  0x8F84B53D98686346682e5f9cD9248B72F8a7383F
+   - **CDI Monthly** 0x5DE7C939998f9eD3A66a7712a7b298816400E71D   - 
+   - **CID Daily Growth Factor** 0x5935Bc8bbf4B8914990371ea9D3e132f276efd9d  - only getLast() and getDate() - Decimal 8 
+   - **SELIC Daily** 0x94C3897e55D30644477c0b184258F440E3632835
+   - **SELIC Daily Growth Factor** 0xF97D14e9e16e7A3596711f99d5e7668312248B86  - only getLast() and getDate() - Decimal 8 
+   - **Dólar PTAX** - 0xd26190e365a052228441e7E3236BFb36128CA9E8 -  only getLast()
+
+**XDC**
+ - **CDI Daily**  0x00675ABf08e4A9Ed5F6d4BB42935af3236226Eb2
+ - **Testnet** 0x7c7410fead839614f30485c65a7247cf47299794 
+
+### Testnet 
+ CHIADO - OPEN Oracle - No subscription required
+   - CDI Daily:  0xf4574F65c6Ef0275774fF059e38a173801E040F8
+   - CDI Monthly 0x14FAdeDAC6bfcDF9aFe907463e34610b65eE40b0
+   - CDI Growth Factor 0xe834f7225922DE21fe658a897F8C9f2E9EeD3eCC- only getLast() and getDate() - Decimal 8
+   - Selic Daily 0xC68A8FAf034A563c1f20Ce87462F5f863a29985f   
+   - Dólar Ptax 0x195ABa350c0F57b6e653fd9C9598Add793628BB9 -  only getLast()
+    
 
 
 ### License
